@@ -40,7 +40,7 @@ function AddPatientForm() {
     console.log(dataToSend);  // Imprime los datos que se enviarán para verificar
   
     try {
-      const response = await axios.post('http://localhost/Proyectos/proyectoGitHub/pacientes.php', dataToSend, {
+      const response = await axios.post('https://proyectogithub-production.up.railway.app/pacientes.php', dataToSend, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -53,7 +53,7 @@ function AddPatientForm() {
       alert('Error al añadir el paciente');
     }
   };
-  
+
   return (
     <form onSubmit={handleSubmit}>
       <h1>Añadir Nuevo Paciente</h1>
