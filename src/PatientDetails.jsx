@@ -19,7 +19,7 @@ function PatientDetails() {
   useEffect(() => {
     const fetchPaciente = async () => {
       try {
-        const response = await axios.get(`http://localhost/Proyectos/proyectoGitHub/pacientes.php?id=${id}`, {
+        const response = await axios.get(`https://proyectogithub-production.up.railway.app/pacientes.php?id=${id}`, {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         if (response.data.length > 0) {
@@ -58,7 +58,7 @@ function PatientDetails() {
     };
 
     try {
-      const response = await axios.put(`http://localhost/Proyectos/proyectoGitHub/pacientes.php?id=${id}`, pacienteData, {
+      const response = await axios.put(`https://proyectogithub-production.up.railway.app/pacientes.php?id=${id}`, pacienteData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -73,7 +73,7 @@ function PatientDetails() {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost/Proyectos/proyectoGitHub/pacientes.php?id=${id}`, {
+      const response = await axios.delete(`https://proyectogithub-production.up.railway.app/pacientes.php?id=${id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         },

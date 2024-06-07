@@ -16,7 +16,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchPacientes = async () => {
       try {
-        const response = await axios.get('http://localhost/Proyectos/proyectoGitHub/pacientes.php?page=1', {
+        const response = await axios.get('https://proyectogithub-production.up.railway.app/pacientes.php?page=1', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         console.log(response.data);  // Verificar la estructura de los datos recibidos
