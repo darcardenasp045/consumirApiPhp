@@ -10,7 +10,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://proyectogithub-production.up.railway.app/auth.php', {
+      const response = await axios.post('http://proyectogithub-production.up.railway.app/auth.php', {
         usuario: username,
         password: password
       });
