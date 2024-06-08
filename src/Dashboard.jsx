@@ -30,19 +30,22 @@ function Dashboard() {
   }, []);
 
   return (
-    <div>
+    <div className='flex flex-col items-center justify-center gap-4'>
       <h1>Dashboard</h1>
       <button onClick={handleAddPatient}>Añadir Nuevo Paciente</button>
       
       {pacientes.length > 0 ? (
         pacientes.map(paciente => (
-          <div key={paciente.PacienteId}>
-            <p>Nombre: {paciente.Nombre || 'No especificado'}</p>
-            <p>DNI: {paciente.DNI}</p>
-            <p>Teléfono: {paciente.Telefono || 'No especificado'}</p>
-            <p>Correo: {paciente.Correo || 'No especificado'}</p>
-            <Link to={`/patient/${paciente.PacienteId}`}>Ver detalles</Link>
-          </div>
+          <table className='border-2 border-silver-900 w-[1000px]' key={paciente.PacienteId}>
+            <tr className='border-2 border-silver-900 w-full'>
+              <td className='border-2 border-silver-900'>Nombre: {paciente.Nombre || 'No especificado'}</td>
+              <td className='border-2 border-silver-900'>DNI: {paciente.DNI}</td>
+              <td className='border-2 border-silver-900'>Teléfono: {paciente.Telefono || 'No especificado'}</td>
+              <td className='border-2 border-silver-900'>Correo: {paciente.Correo || 'No especificado'}</td>
+              <td className='border-2 border-silver-900'><Link to={`/patient/${paciente.PacienteId}`}>Ver detalles</Link></td>
+            </tr>
+          </table>
+        
         ))
       ) : (
         <p>No hay pacientes para mostrar.</p>
